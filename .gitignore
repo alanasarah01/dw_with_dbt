@@ -2,4 +2,8 @@
 venv/
 .env/
 .venv
+<<<<<<< HEAD
 .env
+=======
+DBT
+>>>>>>> a2fd4e70b25cac69028a5b661cef6507685012c3
