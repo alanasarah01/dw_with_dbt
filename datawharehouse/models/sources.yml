@@ -1,13 +1,12 @@
 
 version: 2
 
-source:
+sources:
   - name: dbsalesaovivo_0lf7
-    database: dbsalesaovivo_0lf7
     schema: public
     tables:
       - name: commodities
-        description: "Tabela que contém dados históricos de commodities"
+        description: "Tabela que contém dados históricos de COMMODITIES"
         columns:
           - name: Date
             description: "Data da observação"
@@ -15,3 +14,15 @@ source:
             description: "Preço de fechamento da commodity"
           - name: simbolo
             description: "Símbolo da commodity"
+
+      - name: movimentacao_commodities
+        description: "Tabela seed"
+        columns:
+          - name: date
+            description: "Data da transação"
+          - name: symbol
+            description: "Símbolo da commodity"
+          - name: action
+            description: "Tipo de transação (buy/sell)"
+          - name: quantity
+            description: "Quantidade transacionada"            

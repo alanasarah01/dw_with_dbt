@@ -1,0 +1,12 @@
+datawharehouse:
+  outputs:
+    dev:
+      dbname: dbsalesaovivo_0lf7
+      host: dpg-cpsohcd6l47c73ea6aq0-a.oregon-postgres.render.com
+      pass: PaOrMIbdrE9XDhu9tDJMMSjWWpbkX0gu
+      port: 5432
+      schema: public
+      threads: 1
+      type: postgres
+      user: postgress123
+  target: dev
