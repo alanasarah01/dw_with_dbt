@@ -68,6 +68,12 @@ Este dashboard mostra os dados de commodities e suas transações.
 """)
 
 # Obter os dados
-df = get_data()
-
-st.dataframe(df)
+try:
+    df = get_data()
+    st.dataframe(df)
+except ProgrammingError as e:
+    st.error(f"Erro ao executar a consulta SQL: {e}")
+except Exception as e:
+    st.error(f"Ocorreu um erro: {e}")
+else:
+    st.error("Erro de configuração do banco de dados. Verifique o valor de DB_PORT_PROD.")
