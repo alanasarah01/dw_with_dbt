@@ -36,7 +36,25 @@ def get_data():
         public.dm_commodities;
     """
     df = pd.read_sql(query, engine)
+
+ # Tratamento de valores nulos e conversão de tipos
+    df['data'] = pd.to_datetime(df['data'], errors='coerce')
+    df['simbolo'] = df['simbolo'].astype(str)
+    df['valor_fechamento'] = pd.to_numeric(df['valor_fechamento'], errors='coerce')
+    df['acao'] = df['acao'].astype(str)
+    df['quantidade'] = pd.to_numeric(df['quantidade'], errors='coerce')
+    df['valor'] = pd.to_numeric(df['valor'], errors='coerce')
+    df['ganho'] = pd.to_numeric(df['ganho'], errors='coerce')
+    # trate valores nulos após a conversão, se necessário
+    df = df.fillna({
+        'valor_fechamento': 0,
+        'quantidade': 0,
+        'valor': 0,
+        'ganho': 0
+        })
+        
     return df
+
 
 # Configurar a página do Streamlit
 st.set_page_config(page_title='Dashboard do diretor', layout='wide')
