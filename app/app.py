@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 # Carregar variáveis de ambiente do arquivo .env
 dotenv_path = 'C:\\Users\\Alana\\Documents\\Cursos\\src\\.env'
+
 load_dotenv(dotenv_path)
 
 # Obter as variáveis do arquivo .env
